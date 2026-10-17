@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+requests
+langchain
+langchain-community
+langchain-ollama
+langchain-google-genai
+multipart

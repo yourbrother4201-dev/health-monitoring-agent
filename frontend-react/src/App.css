@@ -1,0 +1,417 @@
+
+/* Main dashboard */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  color: #1e293b;
+  background: #f4f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 5%;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  color: #163b65;
+  font-size: 30px;
+  letter-spacing: normal;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.api-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+.status-dot.connected {
+  background: #16a34a;
+}
+
+/* Main content */
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 30px 5%;
+}
+
+.container section {
+  min-width: 0;
+  margin-bottom: 26px;
+}
+
+.container h2 {
+  margin: 0 0 18px;
+  color: #163b65;
+  font-size: 23px;
+  line-height: 1.35;
+  letter-spacing: normal;
+  font-weight: 700;
+}
+
+.container h3 {
+  color: #334155;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.description {
+  margin: -5px 0 20px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Overview cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+}
+
+.card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card .number {
+  margin: 0;
+  color: #1673b1;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Content panels */
+.panel {
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.panel > p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.panel li {
+  margin-bottom: 10px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* AI chat */
+.chat-box {
+  width: 100%;
+}
+
+.chat-box textarea {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  margin: 0 0 14px;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.answer {
+  margin-top: 20px;
+  padding: 18px;
+  border-left: 4px solid #1683c4;
+  border-radius: 6px;
+  background: #eff6ff;
+}
+
+.answer h3 {
+  margin: 0 0 10px;
+  color: #164e80;
+}
+
+.answer p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* Buttons */
+button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #1673b1;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #125c90;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Forms */
+.fitness-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fitness-form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fitness-form .cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fitness-form .card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fitness-form input,
+.fitness-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.fitness-form input:focus,
+.fitness-form textarea:focus,
+.chat-box textarea:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 1px;
+  border-color: #1673b1;
+}
+
+.fitness-form > button {
+  align-self: flex-start;
+}
+
+.fitness-form [role="status"] {
+  margin: 0;
+  color: #166534;
+  font-size: 14px;
+}
+
+/* Tables */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 13px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+th {
+  background: #edf4fa;
+  color: #254767;
+  font-weight: 700;
+}
+
+td {
+  color: #475569;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Refresh and footer */
+.refresh-section {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 28px;
+}
+
+footer {
+  padding: 20px;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fitness-form .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .container {
+    padding: 24px 3%;
+  }
+
+  .header {
+    padding: 22px 3%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .container {
+    padding: 20px 14px;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+
+  .cards,
+  .fitness-form .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .panel {
+    padding: 17px;
+  }
+
+  .card {
+    padding: 17px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row button {
+    width: 100%;
+  }
+
+  .fitness-form > button {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 11px;
+    font-size: 13px;
+  }
+}
