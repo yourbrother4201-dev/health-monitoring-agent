@@ -8,7 +8,7 @@ those two methods.
 
 from typing import Literal, Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File
 from fastapi.responses import HTMLResponse, Response
 from fastapi.security import OAuth2PasswordBearer
 from pydantic import BaseModel, Field
@@ -297,3 +297,13 @@ def get_risk(user=Depends(current_user)):
 def get_research(topic: str = Query(..., min_length=2, max_length=100), user=Depends(current_user)):
     from backend.wellness.research import summarise_topic
     return summarise_topic(topic)
+
+
+@router.post("/label-scan")
+async def scan_label(file: UploadFile = File(...), user=Depends(current_user)):
+    from backend.wellness.label_reader import read_label
+    data = await file.read()
+    result = read_label(data, file.content_type or "")
+    if "error" in result:
+        raise HTTPException(status_code=400, detail=result["error"])
+    return result
